@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.Json;
+using System.Xml.Serialization;
 using XYZ_university;
 
 namespace XYZExporter
@@ -161,18 +162,15 @@ namespace XYZExporter
                 switch (format)
                 {
                     case "xml":
-                        //deprecated
-                        //  var writer = new FileStream(outpath, FileMode.Create); 
-                        Console.WriteLine("Generating xml is no longer available");
-                        /*var writer = new FileStream("result.xml", FileMode.Create);
-                        var serialaizer = new XmlSerializer(typeof(University), new XmlRootAttribute(message));
-                        serialaizer.Serialize(writer, uni);*/
+                        XmlSerializer writer = new XmlSerializer(typeof(University));
+                        FileStream my_file = File.Create("sample.xml");
+                        writer.Serialize(my_file, university);
                         break;
                     case "json":
                         Console.WriteLine("generating json");
                         var jsonString = JsonSerializer.Serialize<University>(university);
-                        
                         Console.WriteLine(jsonString);
+                        File.WriteAllText("example.json", jsonString);
                         break;
                     default:
                         using(StreamWriter streamWriter = File.AppendText(log_file_path))
