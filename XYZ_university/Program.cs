@@ -144,7 +144,7 @@ namespace XYZExporter
                     Console.WriteLine("incorrect entry: " + item.id + " " + item.name + " " + item.surname);
                     using (StreamWriter streamWriter = File.AppendText(log_file_path))
                     {
-                        streamWriter.WriteLine("Incorrect entry found for student with following credentials: name: " + item.name + ", surname: " + item.surname + " id: " + item.id);
+                        streamWriter.WriteLine("Incorrect entry found for a student with the following credentials: name: " + item.name + ", surname: " + item.surname + " id: " + item.id);
                     };
 
                 }
