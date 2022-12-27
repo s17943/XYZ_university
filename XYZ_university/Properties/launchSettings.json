@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "XYZ_university": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\Jasiek\\RiderProjects\\apbd_2_data\\apbd_2_data\\Data\\dane.csv C:\\test\\log.txt json"
+    }
+  }
+}
